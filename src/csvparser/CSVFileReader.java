@@ -131,7 +131,10 @@ public class CSVFileReader {
     }
     
     public void insertLine(int index, CSVLine line){
-        index < lines.size() ? lines.add(index, line): lines.add(line);
+        if (index < lines.size())
+            lines.add(index, line);
+        else
+            lines.add(line);
     }
     
     public void appendLine(CSVLine line){
